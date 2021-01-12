@@ -5,7 +5,7 @@
 FROM balenalib/raspberrypi3:stretch
 
 ### Run commands within QEMU ARM cross-build emulation ---------------------------------
-RUN [ "cross-build-start" ]
+###RUN [ "cross-build-start" ]
 
 RUN apt-get update && \
     apt-get install -y wget multiarch-support && \
@@ -26,7 +26,7 @@ ADD ./run_aircast.sh run_aircast.sh
 ADD ./setconfig_aircast.sh setconfig_aircast.sh
 RUN chmod +x setconfig.sh setoptions.sh setbinary.sh run_aircast.sh setconfig_aircast.sh
 
-RUN [ "cross-build-end" ]
+###RUN [ "cross-build-end" ]
 ### End QEMU ARM emulation -------------------------------------------------------------
 
 # 'run_aircast.sh` will run aircast-arm daemonised if
